@@ -1,14 +1,24 @@
 import React from 'react';
 import { Card, Col, Button } from 'react-bootstrap';
-import './Package.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
 
-const Package = (props) => {
+const Showorder = (props) => {
     const clock = <FontAwesomeIcon icon={faClock} />
     const map = <FontAwesomeIcon icon={faMapMarkerAlt} />
-    const { _id, title, location, duration, price, description, img } = props.packages;
+    const { _id, title, location, duration, price, description, img, status } = props.orders;
+    console.log(props.orders);
+    // delete 
+    const handleDelete = (ID) => {
+        const url = `http://localhost:5000/deleteorder/${ID}`;
+        fetch(url, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+    }
     return (
         <Col>
             <Card className="h-100 card-border shadow-lg">
@@ -20,6 +30,11 @@ const Package = (props) => {
                     </div>
                     <div className="justify-content-center mt-2">
                         <span className="fw-bold">{map}{" "}{location}</span>
+
+                    </div>
+                    <div className="justify-content-center mt-2">
+                        <span className="fw-bold"><span className="price fs-6 fw-bolder"><span className="fs-5 fw-bolder">Order-Status:</span> {status}</span></span>
+
                     </div>
                     <Card.Title className="pt-3 fw-bolder">{title}</Card.Title>
                     <Card.Text>
@@ -28,13 +43,11 @@ const Package = (props) => {
                 </Card.Body>
                 <Card.Footer className="bg-white">
                     <div className="d-flex justify-content-center">
-                        <Link to={`/addorders/${_id}`}>
-                            <Button
-                                className="btn-light-card fw-bold border-0"
-                            >
-                                Book Package
-                            </Button>
-                        </Link>
+                        <Button onClick={() => handleDelete(_id)}
+                            className="btn-light-card fw-bold border-0"
+                        >
+                            Delete Package
+                        </Button>
                     </div>
                 </Card.Footer>
             </Card>
@@ -42,4 +55,4 @@ const Package = (props) => {
     );
 };
 
-export default Package;
+export default Showorder;

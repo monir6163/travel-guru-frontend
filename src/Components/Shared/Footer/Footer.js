@@ -1,7 +1,6 @@
 import React from 'react';
 import { FormControl, InputGroup, Nav, Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import logo from '../../../image/logo/pngegg.png';
 
 const Footer = () => {
     return (
@@ -12,7 +11,7 @@ const Footer = () => {
             <div className="container">
                 <div className="row pt-4 pb-2">
                     <div className="col-12 col-md-6 col-lg-3 mb-4 text-center">
-                        <img style={{ maxWidth: "150px", width: "100%" }} className='mb-3' src={logo} alt="" />
+                        <img style={{ maxWidth: "150px", width: "100%" }} className='mb-3' src="https://i.ibb.co/7Wjpyd7/pngegg.png" alt="TravelGuru" />
                         <p className="text-justify abril-font">
                             Millions of people of all ages and from around the
                             world are improving their lives with us.We work with

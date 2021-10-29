@@ -4,8 +4,12 @@ import './Login.css';
 import useAuth from '../../Hooks/useAuth';
 import { useHistory, useLocation } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { useEffect } from 'react';
 
 const Login = () => {
+    useEffect(() => {
+        document.title = 'Login : Your Trusted Travel Partner'
+    }, []);
     const history = useHistory();
     const location = useLocation();
     const googleRedirect = location?.state?.from || "/";
@@ -19,7 +23,7 @@ const Login = () => {
                 )
                 history.push(googleRedirect);
 
-            }).finally(() => setIsLoading(false))
+            })
             .catch((error) => {
                 Swal.fire(
                     "Something went wrong!",

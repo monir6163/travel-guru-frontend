@@ -4,7 +4,7 @@ import { useState } from 'react';
 const UsePackage = () => {
     const [packages, setPackages] = useState([]);
     useEffect(() => {
-        fetch('data.json')
+        fetch('http://localhost:5000/allpackages')
             .then(res => res.json())
             .then(data => setPackages(data))
     }, [])

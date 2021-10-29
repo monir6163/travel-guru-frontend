@@ -1,16 +1,28 @@
 import React from 'react';
 import Banner from './Banner/Banner';
 import './Home.css';
-import { Card, Col, Container, Form, Row, Button, FormSelect } from 'react-bootstrap';
+import { Card, Col, Container, Form, Row, Button, FormSelect, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import Package from './Services/Package/Package';
 import UsePackage from '../../Hooks/UsePackage';
+import { useEffect } from 'react';
 
 
 const Home = () => {
+    useEffect(() => {
+        document.title = 'TravelGuru : Your Trusted Travel Partner'
+    }, []);
     const [packages] = UsePackage();
+    if (packages.length === 0) {
+        return (
+            <div style={{ minHeight: '100vh' }} className="d-flex justify-content-center align-items-center">
+                <Spinner animation="border" variant="success" />
+            </div>
+        );
+    }
+
     const user = <FontAwesomeIcon icon={faUser} />
     return (
         <>
@@ -165,6 +177,7 @@ const Home = () => {
                     <Row xs={1} md={2} lg={3} xl={3} className="g-5">
                         {
                             packages.map(service => <Package
+                                key={service._id}
                                 packages={service}
                             ></Package>)
                         }
