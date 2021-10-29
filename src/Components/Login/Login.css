@@ -1,3 +1,20 @@
-.form-check-label {
-    color: #fff !important;
+.btn-google {
+    color: #545454;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 1px #ddd
+}
+
+.login-bg {
+    background-image: linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),url('https://i.ibb.co/PxXMxnY/login.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    background-position: 50%;
+    position: relative;
+}
+.login-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

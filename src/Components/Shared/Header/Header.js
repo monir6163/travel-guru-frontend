@@ -5,7 +5,6 @@ import { useHistory, useLocation } from 'react-router';
 import Swal from 'sweetalert2';
 import './Header.css';
 import useAuth from '../../../Hooks/useAuth';
-import logo from '../../../image/logo/pngegg.png';
 
 const Header = () => {
     // const activeMenu = {
@@ -43,7 +42,7 @@ const Header = () => {
                 <Container>
                     <Navbar.Brand>
                         <Nav.Link as={NavLink} to="/">
-                            <img className="logo-image" src={logo} alt="Taravel-Guru" />
+                            <img className="logo-image" src="https://i.ibb.co/7Wjpyd7/pngegg.png" alt="Taravel-Guru" />
                         </Nav.Link>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -64,7 +63,7 @@ const Header = () => {
                                 <>
                                     <Nav.Link as={NavLink} to="/orders" className="fs-6 fw-bold px-3 text-white abril-font">My Orders</Nav.Link>
                                     <Nav.Link as={NavLink} to="/all-orders" className="fs-6 fw-bold px-3 text-white abril-font">Manage All Orders</Nav.Link>
-                                    <Nav.Link as={NavLink} to="/add-services" className="fs-6 fw-bold px-3 text-white abril-font">Add A New Service</Nav.Link>
+                                    <Nav.Link as={NavLink} to="/add-services" className="fs-6 fw-bold px-3 text-white abril-font">Add New Service</Nav.Link>
                                     <NavDropdown
                                         title={
                                             <img

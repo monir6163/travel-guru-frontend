@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import './NotFound.css';
-import notFound from '../../image/notfound/404.png';
 
 const NotFound = () => {
     return (
@@ -12,11 +11,11 @@ const NotFound = () => {
                     <div className="row">
                         <div className="col-md-6 mx-auto">
                             <div className="mt-5">
-                                <img src={notFound} alt="Page Not Found" />
+                                <img src="https://i.ibb.co/vqBfzxV/404.png" alt="Page Not Found" />
                             </div>
                             <div className="mt-5 mx-auto text-center">
                                 <Link to="/">
-                                    <Button variant="info" className="fs-5 fw-bolder">
+                                    <Button className="fs-5 fw-bolder">
                                         Go Back Home
                                     </Button>
                                 </Link>

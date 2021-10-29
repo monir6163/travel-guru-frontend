@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav } from 'react-bootstrap';
+import { FormControl, InputGroup, Nav, Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import logo from '../../../image/logo/pngegg.png';
 
@@ -55,6 +55,19 @@ const Footer = () => {
                             <a href="https://www.youtube.com/">
                                 <i className="fab fa-2x fa-youtube text-white"></i>
                             </a>
+                        </div>
+                        <div className="mt-3">
+                            <h4>Subscibe Now</h4>
+                            <InputGroup className="mb-3">
+                                <FormControl
+                                    placeholder="Your Email"
+                                    aria-label="Recipient's username"
+                                    aria-describedby="basic-addon2"
+                                />
+                                <Button onClick={(e) => { e.preventDefault() }} id="button-addon2">
+                                    Subscribe
+                                </Button>
+                            </InputGroup>
                         </div>
                     </div>
                 </div>
