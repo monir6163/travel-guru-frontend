@@ -1,0 +1,24 @@
+.nav-bg {
+    background-color: #061a3a;
+}
+.logo-image {
+    width: 100%;
+    max-width: 150px;
+    vertical-align: middle;
+
+}
+.nav-link {
+    text-transform: uppercase;
+}
+.nav-link:hover {
+    color: orange !important;
+}
+.nav-link.active {
+    color: #ff7c5b!important;
+}
+.navbar-toggler.collapsed {
+    background-color: #fff !important;
+}
+.navbar-toggler {
+    background-color: #fff !important;
+}

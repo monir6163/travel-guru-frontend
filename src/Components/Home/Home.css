@@ -1,0 +1,57 @@
+.feuture-title {
+    font-family: 'abril-font';
+    color: #061a3a;
+    font-size: 20px;
+    font-weight: 900;
+}
+.card-border {
+    border-radius: 1rem !important;
+    overflow: hidden !important;
+    transform: scale(1);
+    transition: all 1s;
+}
+#cardimg {
+    transform: scale(1);
+    transition: all 1s;
+}
+#cardimg:hover {
+    transform: scale(1.1);
+    transition: all 1s;
+}
+.card-border:hover {
+   transform: scale(1.1);
+    transition: all 1s;
+}
+.sec-title p {
+    position: relative;
+    display: block;
+    font-size: 14px;
+    color: gray;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.sec-title h2 {
+    position: relative;
+    display: block;
+    font-size: 25px;
+    font-weight: 900;
+}
+.btn-light-green {
+    background-color: #061a3a;
+    transform: scale(1.1);
+    transition: all 1s;
+}
+.btn-light-green:hover {
+    transform: scale(1.1);
+    transition: all 1s;
+    background-color: #ff7c5b;
+}
+.btn-light-card {
+    background-color: #061a3a;
+}
+.btn-light-card:hover {
+    background-color: #061a3a;
+}
+.price {
+    color: #ff7c5b;
+}
