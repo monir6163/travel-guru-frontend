@@ -30,7 +30,7 @@ const Footer = () => {
                         <h4>Quic Links</h4>
                         <Nav.Link as={NavLink} to="/home" className="fs-6 fw-bold px-3 text-white">Home</Nav.Link>
                         <Nav.Link as={NavLink} to="/about" className="fs-6 fw-bold px-3 text-white">About</Nav.Link>
-                        <Nav.Link as={NavLink} to="/services" className="fs-6 fw-bold px-3 text-white">Services</Nav.Link>
+                        <Nav.Link as={NavLink} to="/packages" className="fs-6 fw-bold px-3 text-white">Packages</Nav.Link>
                     </div>
                     <div className="col-12 col-md-6 col-lg-3 mb-4 text-center abril-font">
                         <h4>Follow us</h4>
