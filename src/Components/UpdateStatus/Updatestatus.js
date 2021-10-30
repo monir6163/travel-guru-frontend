@@ -3,20 +3,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2';
 import { Card, Col, Container, Row, Button } from 'react-bootstrap';
-import './Manageallorder.css';
 
-const Manageallorder = () => {
-
-    const [allOrders, setAllOrders] = useState([]);
-    const [status, setStatus] = useState(null)
+const Updatestatus = () => {
+    const [status, setStatus] = useState([]);
     useEffect(() => {
         document.title = "My Orders | TravelGuru";
     }, []);
     useEffect(() => {
         fetch('http://localhost:5000/placeorders/')
             .then((res) => res.json())
-            .then((data) => setAllOrders(data));
-    }, [status]);
+            .then((data) => setStatus(data));
+    }, []);
     const handleDelete = (id) => {
         const proced = window.confirm('Are you Sure, You Want to Delete Your Data?');
         if (proced) {
@@ -31,33 +28,11 @@ const Manageallorder = () => {
                             "Data Delete SuccessFull!",
                             "success"
                         )
-                        const remainingPacks = allOrders.filter((pack) => pack._id !== id);
-                        setAllOrders(remainingPacks);
+                        const remainingPacks = status.filter((pack) => pack._id !== id);
+                        setStatus(remainingPacks);
                     }
                 })
         }
-    }
-    const handleUpdate = (id) => {
-        const url = `http://localhost:5000/placeorders/${id}`;
-        fetch(url, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(allOrders)
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.modifiedCount > 0) {
-                    setStatus(!status)
-                    Swal.fire("WoW!",
-                        "Status Update SuccessFull!",
-                        "success"
-                    )
-                } else {
-                    setStatus(false)
-                }
-            })
     }
     const clock = <FontAwesomeIcon icon={faClock} />
     const map = <FontAwesomeIcon icon={faMapMarkerAlt} />
@@ -68,7 +43,7 @@ const Manageallorder = () => {
             </div>
             <Row xs={1} md={2} lg={3} className="g-5">
                 {
-                    allOrders.map(orders => {
+                    status.map(orders => {
                         return (< Col key={orders._id}>
                             <Card className="h-100 card-border shadow-lg">
                                 <Card.Img className="overflow-hidden" variant="top" src={orders?.order?.img} id='cardimg' />
@@ -91,16 +66,11 @@ const Manageallorder = () => {
                                     </Card.Text>
                                 </Card.Body>
                                 <Card.Footer className="bg-white">
-                                    <div className="d-flex justify-content-between">
+                                    <div className="d-flex justify-content-center">
                                         <Button onClick={() => handleDelete(orders._id)}
                                             className="btn-light-card fw-bold border-0"
                                         >
-                                            Delete Package
-                                        </Button>
-                                        <Button onClick={() => handleUpdate(orders._id)}
-                                            className="btn-status-card fw-bold border-0"
-                                        >
-                                            Update Status
+                                            Update
                                         </Button>
                                     </div>
                                 </Card.Footer>
@@ -113,4 +83,4 @@ const Manageallorder = () => {
     );
 };
 
-export default Manageallorder;
+export default Updatestatus;
