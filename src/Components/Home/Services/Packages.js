@@ -19,7 +19,7 @@ const Packages = () => {
                 {packages.length === 0 ? <div style={{ minHeight: '50vh' }} className="d-flex justify-content-center align-items-center">
                     <Spinner animation="border" variant="success" />
                 </div> :
-                    <Row xs={1} md={2} lg={3} xl={3} className="g-5">
+                    <Row xs={1} md={2} lg={3} xl={3} className="g-4">
                         {
                             packages.map(service => <Package
                                 key={service._id}

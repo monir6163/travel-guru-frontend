@@ -174,7 +174,7 @@ const Home = () => {
                         <p className="text-uppercase abril-font">MODERN & BEAUTIFUL</p>
                         <h2 className="text-uppercase abril-font mb-5">Our Most Popular Packages</h2>
                     </div>
-                    <Row xs={1} md={2} lg={3} xl={3} className="g-5">
+                    <Row xs={1} md={2} lg={3} xl={3} className="g-4">
                         {
                             packages.map(service => <Package
                                 key={service._id}

@@ -66,7 +66,7 @@ const Manageallorder = () => {
             <div className="col-12 col-md-8 mx-auto">
                 <h3 className="text-light-green text-center mt-5 mb-3 text-decoration-underline">Manage All Orders List</h3>
             </div>
-            <Row xs={1} md={2} lg={3} className="g-5">
+            <Row xs={1} md={2} lg={3} className="g-4">
                 {
                     allOrders.map(orders => {
                         return (< Col key={orders._id}>
