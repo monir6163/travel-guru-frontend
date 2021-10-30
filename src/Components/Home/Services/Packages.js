@@ -9,13 +9,6 @@ const Packages = () => {
         document.title = 'AllPackages : Your Trusted Travel Partner'
     }, []);
     const [packages] = UsePackage();
-    if (packages.length === 0) {
-        return (
-            <div style={{ minHeight: '100vh' }} className="d-flex justify-content-center align-items-center">
-                <Spinner animation="border" variant="success" />
-            </div>
-        );
-    }
     return (
         <section className="package-container mt-5 mb-5">
             <Container>
@@ -23,14 +16,18 @@ const Packages = () => {
                     <p className="text-uppercase abril-font">MODERN & BEAUTIFUL</p>
                     <h2 className="text-uppercase abril-font mb-5">Our Most Popular Packages</h2>
                 </div>
-                <Row xs={1} md={2} lg={3} xl={3} className="g-5">
-                    {
-                        packages.map(service => <Package
-                            key={service._id}
-                            packages={service}
-                        ></Package>)
-                    }
-                </Row>
+                {packages.length === 0 ? <div style={{ minHeight: '50vh' }} className="d-flex justify-content-center align-items-center">
+                    <Spinner animation="border" variant="success" />
+                </div> :
+                    <Row xs={1} md={2} lg={3} xl={3} className="g-5">
+                        {
+                            packages.map(service => <Package
+                                key={service._id}
+                                packages={service}
+                            ></Package>)
+                        }
+                    </Row>
+                }
             </Container>
         </section>
     );

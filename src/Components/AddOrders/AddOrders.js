@@ -24,15 +24,18 @@ const AddOrders = () => {
     const { register, handleSubmit, reset } = useForm();
     const history = useHistory();
     const onSubmit = (data) => {
-        orders.status = 'pending';
-        orders.email = data.email;
+        // orders.status = 'pending';
+        // orders.email = data.email;
+        data.status = 'pending';
+        data.email = user?.email;
+        data.order = orders;
         fetch('http://localhost:5000/placeorders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
 
             },
-            body: JSON.stringify(orders)
+            body: JSON.stringify(data)
         })
             .then(res => {
                 if (res) {
@@ -51,6 +54,7 @@ const AddOrders = () => {
                     "error"
                 )
             })
+        console.log(data);
     }
     return (
         <section>

@@ -62,7 +62,7 @@ const Header = () => {
                             ) : (
                                 <>
                                     <Nav.Link as={NavLink} to="/myorders" className="fs-6 fw-bold px-3 text-white abril-font">My Orders</Nav.Link>
-                                    <Nav.Link as={NavLink} to="/all-orders" className="fs-6 fw-bold px-3 text-white abril-font">Manage All Orders</Nav.Link>
+                                    <Nav.Link as={NavLink} to="/allorders" className="fs-6 fw-bold px-3 text-white abril-font">Manage All Orders</Nav.Link>
                                     <Nav.Link as={NavLink} to="/addpackage" className="fs-6 fw-bold px-3 text-white abril-font">Add Package</Nav.Link>
                                     <NavDropdown
                                         title={

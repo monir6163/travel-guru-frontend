@@ -1,23 +1,20 @@
-import React from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { Card, Col, Container, Row, Button } from 'react-bootstrap';
-import useAuth from '../../Hooks/useAuth';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2';
+import { Card, Col, Container, Row, Button } from 'react-bootstrap';
 
-const MyOrders = () => {
-    const { user } = useAuth();
-    const [myOrders, setMyOrders] = useState([]);
+const Manageallorder = () => {
+
+    const [allOrders, setAllOrders] = useState([]);
     useEffect(() => {
         document.title = "My Orders | TravelGuru";
     }, []);
     useEffect(() => {
-        fetch(`http://localhost:5000/myorders/${user?.email}`)
+        fetch('http://localhost:5000/placeorders/')
             .then((res) => res.json())
-            .then((data) => setMyOrders(data));
-    }, [user?.email]);
+            .then((data) => setAllOrders(data));
+    }, []);
     const handleDelete = (id) => {
         const proced = window.confirm('Are you Sure, You Want to Delete Your Data?');
         if (proced) {
@@ -32,8 +29,8 @@ const MyOrders = () => {
                             "Data Delete SuccessFull!",
                             "success"
                         )
-                        const remainingPacks = myOrders.filter((pack) => pack._id !== id);
-                        setMyOrders(remainingPacks);
+                        const remainingPacks = allOrders.filter((pack) => pack._id !== id);
+                        setAllOrders(remainingPacks);
                     }
                 })
         }
@@ -47,7 +44,7 @@ const MyOrders = () => {
             </div>
             <Row xs={1} md={2} lg={3} className="g-5">
                 {
-                    myOrders.map(orders => {
+                    allOrders.map(orders => {
                         return (< Col key={orders._id}>
                             <Card className="h-100 card-border shadow-lg">
                                 <Card.Img className="overflow-hidden" variant="top" src={orders?.order?.img} id='cardimg' />
@@ -87,4 +84,4 @@ const MyOrders = () => {
     );
 };
 
-export default MyOrders;
+export default Manageallorder;
