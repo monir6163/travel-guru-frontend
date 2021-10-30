@@ -13,21 +13,18 @@ const Footer = () => {
                     <div className="col-12 col-md-6 col-lg-3 mb-4 text-center">
                         <img style={{ maxWidth: "150px", width: "100%" }} className='mb-3' src="https://i.ibb.co/7Wjpyd7/pngegg.png" alt="TravelGuru" />
                         <p className="text-justify abril-font">
-                            Millions of people of all ages and from around the
-                            world are improving their lives with us.We work with
-                            a passion of taking challenges and creating new ones
-                            in advertising sector.
+                            Travel by water often provided more comfort and speed than land-travel, at least until the advent of a network of railways in the 19th century.
                         </p>
                     </div>
                     <div className="col-12 col-md-6 col-lg-3 mb-4 text-center abril-font">
-                        <h4>Top Services</h4>
-                        <span>ENGINE DIAGNOSTIC</span>
+                        <h4>Top Package</h4>
+                        <span>Atlantis the Palm Dubai</span>
                         <br />
-                        <span>WHEEL ALIGNMENT</span>
+                        <span>Premier Sukhumvit Bangkok</span>
                         <br />
-                        <span>OIL CHANGING</span>
+                        <span>Trisara(SHA Plus+)</span>
                         <br />
-                        <span>BRAKE REPAIRING</span>
+                        <span>Craftsman Bangkok</span>
                     </div>
                     <div className="col-12 col-md-6 col-lg-3 mb-4 text-center abril-font">
                         <h4>Quic Links</h4>

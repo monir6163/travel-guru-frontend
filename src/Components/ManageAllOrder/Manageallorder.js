@@ -10,7 +10,7 @@ const Manageallorder = () => {
     const [allOrders, setAllOrders] = useState([]);
     const [status, setStatus] = useState(null)
     useEffect(() => {
-        document.title = "My Orders | TravelGuru";
+        document.title = "Manage All Orders | TravelGuru";
     }, []);
     useEffect(() => {
         fetch('https://fast-anchorage-60876.herokuapp.com/placeorders/')
