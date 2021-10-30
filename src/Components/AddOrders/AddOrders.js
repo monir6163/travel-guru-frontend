@@ -15,7 +15,7 @@ const AddOrders = () => {
     const { bookid } = useParams();
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/orders/${bookid}`)
+        fetch(`https://fast-anchorage-60876.herokuapp.com/orders/${bookid}`)
             .then(res => res.json())
             .then(data => {
                 setOrders(data)
@@ -29,7 +29,7 @@ const AddOrders = () => {
         data.status = 'pending';
         data.email = user?.email;
         data.order = orders;
-        fetch('http://localhost:5000/placeorders', {
+        fetch('https://fast-anchorage-60876.herokuapp.com/placeorders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

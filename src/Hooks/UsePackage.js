@@ -4,7 +4,7 @@ import { useState } from 'react';
 const UsePackage = () => {
     const [packages, setPackages] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/allpackages')
+        fetch('https://fast-anchorage-60876.herokuapp.com/allpackages')
             .then(res => res.json())
             .then(data => setPackages(data))
     }, [])

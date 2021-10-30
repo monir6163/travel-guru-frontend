@@ -7,7 +7,7 @@
    - This site is about a Tour Package Booking System. We take all the responsibilities of our tourists and take order from this site. It's a task of assignment 11 given by programming hero. I've used my own idea to generate this UI as well as functionalities.
 
 
-#### Technolgy I've Used: 
+#### Technolgy Used: 
 - I've used react to develop the UI of this site
 - I used react font-awesome for icons. And also used react bootstrap for responsiveness and faster design.
 - I placed all the data in Mongdb and load from there.

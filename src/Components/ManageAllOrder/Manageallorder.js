@@ -13,14 +13,14 @@ const Manageallorder = () => {
         document.title = "My Orders | TravelGuru";
     }, []);
     useEffect(() => {
-        fetch('http://localhost:5000/placeorders/')
+        fetch('https://fast-anchorage-60876.herokuapp.com/placeorders/')
             .then((res) => res.json())
             .then((data) => setAllOrders(data));
     }, [status]);
     const handleDelete = (id) => {
         const proced = window.confirm('Are you Sure, You Want to Delete Your Data?');
         if (proced) {
-            const url = `http://localhost:5000/deleteallorder/${id}`;
+            const url = `https://fast-anchorage-60876.herokuapp.com/deleteallorder/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -38,7 +38,7 @@ const Manageallorder = () => {
         }
     }
     const handleUpdate = (id) => {
-        const url = `http://localhost:5000/placeorders/${id}`;
+        const url = `https://fast-anchorage-60876.herokuapp.com/placeorders/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

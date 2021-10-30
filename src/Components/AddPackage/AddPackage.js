@@ -11,7 +11,7 @@ const AddPackage = () => {
     }, []);
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = (data) => {
-        fetch('http://localhost:5000/allPackages', {
+        fetch('https://fast-anchorage-60876.herokuapp.com/allPackages', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

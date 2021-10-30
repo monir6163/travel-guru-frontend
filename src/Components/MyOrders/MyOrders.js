@@ -14,14 +14,14 @@ const MyOrders = () => {
         document.title = "My Orders | TravelGuru";
     }, []);
     useEffect(() => {
-        fetch(`http://localhost:5000/myorders/${user?.email}`)
+        fetch(`https://fast-anchorage-60876.herokuapp.com/myorders/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setMyOrders(data));
     }, [user?.email]);
     const handleDelete = (id) => {
         const proced = window.confirm('Are you Sure, You Want to Delete Your Data?');
         if (proced) {
-            const url = `http://localhost:5000/deleteorder/${id}`;
+            const url = `https://fast-anchorage-60876.herokuapp.com/deleteorder/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
