@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { Card, Col, Container, Row, Button } from 'react-bootstrap';
 import useAuth from '../../Hooks/useAuth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faMapMarkerAlt, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faClock, faMapMarkerAlt, faUser, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2';
 
 const MyOrders = () => {
@@ -41,6 +41,7 @@ const MyOrders = () => {
     const clock = <FontAwesomeIcon icon={faClock} />
     const map = <FontAwesomeIcon icon={faMapMarkerAlt} />
     const iconuser = <FontAwesomeIcon icon={faUser} />
+    const check = <FontAwesomeIcon icon={faCheckCircle} />
     return (
         <Container className="mb-5 mt-5" data-aos="fade-up" style={{ minHeight: '100vh' }}>
             <div className="col-12 col-md-8 mx-auto">
@@ -68,7 +69,21 @@ const MyOrders = () => {
 
                                     </div>
                                     <div className="justify-content-center mt-2">
-                                        <span className="fw-bold"><span className="price fs-6 fw-bolder"><span className="fs-5 fw-bolder">Order-Status:</span> {orders?.status}</span></span>
+                                        {
+                                            orders?.status === 'approved' ? (<h6 className="text-success fw-bolder">
+                                                {" "}
+                                                <span className="text-cyan fw-semi-bolder">
+                                                    Order Status:{" "}
+                                                </span>{" "}
+                                                {orders?.status} {""} {check}
+                                            </h6>) : (<h6 className="text-danger fw-bolder">
+                                                {" "}
+                                                <span className="text-cyan fw-semi-bolder">
+                                                    Order Status:{" "}
+                                                </span>{" "}
+                                                {orders?.status}{""} {clock}
+                                            </h6>)
+                                        }
 
                                     </div>
                                     <Card.Title className="pt-3 fw-bolder">{orders?.order?.title}</Card.Title>
