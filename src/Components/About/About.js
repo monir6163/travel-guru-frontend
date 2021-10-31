@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './About.css';
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 
 const About = () => {
+    useEffect(() => {
+        document.title = 'About : Your Trusted Travel Partner'
+    }, []);
     return (
         <section className="about-container mb-5 mt-5" data-aos="fade-up">
             <div className="container">
