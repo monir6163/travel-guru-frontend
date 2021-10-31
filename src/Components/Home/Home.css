@@ -19,8 +19,9 @@
     transition: all 1s;
 }
 .card-border:hover {
-   transform: scale(1.1);
+    transform: scale(1.03);
     transition: all 1s;
+    overflow: hidden;
 }
 .sec-title p {
     position: relative;
