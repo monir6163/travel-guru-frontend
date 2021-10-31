@@ -67,6 +67,7 @@ const AddOrders = () => {
                                 <Form.Group as={Col} controlId="formGridName">
                                     <Form.Label>User Name</Form.Label>
                                     <Form.Control
+                                        readOnly
                                         defaultValue={user?.displayName}
                                         className="text-secondary fw-semi-bold"
 
@@ -76,6 +77,7 @@ const AddOrders = () => {
                                 <Form.Group as={Col} controlId="formGridEmail">
                                     <Form.Label>User Email</Form.Label>
                                     <Form.Control
+                                        readOnly
                                         defaultValue={user?.email}
                                         className="text-secondary fw-semi-bold"
 
@@ -87,6 +89,7 @@ const AddOrders = () => {
                                 <Form.Group as={Col} controlId="formGridEmail">
                                     <Form.Label>Address</Form.Label>
                                     <Form.Control
+                                        placeholder="Dhaka"
                                         className="text-secondary fw-semi-bold"
 
                                         {...register("address", { required: true })}
@@ -95,6 +98,8 @@ const AddOrders = () => {
                                 <Form.Group as={Col} controlId="formGridEmail">
                                     <Form.Label>Phone</Form.Label>
                                     <Form.Control
+                                        type="number"
+                                        placeholder="+880 1747706163"
                                         className="text-secondary fw-semi-bold"
 
                                         {...register("phone", { required: true })}

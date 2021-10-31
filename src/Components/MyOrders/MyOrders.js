@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { Card, Col, Container, Row, Button } from 'react-bootstrap';
 import useAuth from '../../Hooks/useAuth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faClock, faMapMarkerAlt, faUser } from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2';
 
 const MyOrders = () => {
@@ -40,6 +40,7 @@ const MyOrders = () => {
     }
     const clock = <FontAwesomeIcon icon={faClock} />
     const map = <FontAwesomeIcon icon={faMapMarkerAlt} />
+    const iconuser = <FontAwesomeIcon icon={faUser} />
     return (
         <Container className="mb-5 mt-5" style={{ minHeight: '100vh' }}>
             <div className="col-12 col-md-8 mx-auto">
@@ -50,7 +51,9 @@ const MyOrders = () => {
                     myOrders.map(orders => {
                         return (< Col key={orders._id}>
                             <Card className="h-100 card-border shadow-lg">
-                                <Card.Img className="overflow-hidden" variant="top" src={orders?.order?.img} id='cardimg' />
+                                <div>
+                                    <Card.Img className="overflow-hidden" variant="top" src={orders?.order?.img} id='cardimg' />
+                                </div>
                                 <Card.Body className="overflow-hidden text-center">
                                     <div className="d-flex justify-content-between">
                                         <span className="fw-bold">{clock}{" "}{orders?.order?.duration}{" "}Days / Night</span>
@@ -58,6 +61,10 @@ const MyOrders = () => {
                                     </div>
                                     <div className="justify-content-center mt-2">
                                         <span className="fw-bold">{map}{" "}{orders?.order?.location}</span>
+
+                                    </div>
+                                    <div className="justify-content-center mt-2">
+                                        <span className="fw-bold text-muted">{iconuser}{" "}Booked By:{" "}{orders?.name}</span>
 
                                     </div>
                                     <div className="justify-content-center mt-2">

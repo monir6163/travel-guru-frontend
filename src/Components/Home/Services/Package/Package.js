@@ -12,7 +12,9 @@ const Package = (props) => {
     return (
         <Col>
             <Card className="h-100 card-border shadow-lg">
-                <Card.Img className="overflow-hidden" variant="top" src={img} id='cardimg' />
+                <div>
+                    <Card.Img className="overflow-hidden" variant="top" src={img} id='cardimg' />
+                </div>
                 <Card.Body className="overflow-hidden text-center">
                     <div className="d-flex justify-content-between">
                         <span className="fw-bold">{clock}{" "}{duration}{" "}Days / Night</span>

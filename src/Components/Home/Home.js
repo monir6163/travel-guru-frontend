@@ -36,7 +36,9 @@ const Home = () => {
                     <Row xs={1} md={4} className="g-4">
                         <Col>
                             <Card className="h-100 card-border shadow-lg">
-                                <Card.Img variant="top" className="overflow-hidden" src="https://i.ibb.co/dtpwfY3/feature-1.jpg" id='cardimg' />
+                                <div>
+                                    <Card.Img variant="top" className="overflow-hidden" src="https://i.ibb.co/dtpwfY3/feature-1.jpg" id='cardimg' />
+                                </div>
                                 <Card.Body className="text-center">
                                     <Card.Title className="feuture-title">2000+ Our Worldwide Guide</Card.Title>
                                 </Card.Body>
@@ -44,7 +46,9 @@ const Home = () => {
                         </Col>
                         <Col>
                             <Card className="h-100 card-border shadow-lg">
-                                <Card.Img variant="top" className="overflow-hidden" src="https://i.ibb.co/xgV0c3d/feature-2.jpg" id='cardimg' />
+                                <div>
+                                    <Card.Img variant="top" className="overflow-hidden" src="https://i.ibb.co/xgV0c3d/feature-2.jpg" id='cardimg' />
+                                </div>
                                 <Card.Body className="text-center">
                                     <Card.Title className="feuture-title">100% Trusted Tour Agency</Card.Title>
                                 </Card.Body>
@@ -52,7 +56,9 @@ const Home = () => {
                         </Col>
                         <Col>
                             <Card className="h-100 card-border shadow-lg">
-                                <Card.Img variant="top" className="overflow-hidden" src="https://i.ibb.co/zrnhP9P/feature-3.jpg" id='cardimg' />
+                                <div>
+                                    <Card.Img variant="top" className="overflow-hidden" src="https://i.ibb.co/zrnhP9P/feature-3.jpg" id='cardimg' />
+                                </div>
                                 <Card.Body className="text-center">
                                     <Card.Title className="feuture-title">12+ Years of Travel Experience</Card.Title>
                                 </Card.Body>
@@ -60,7 +66,9 @@ const Home = () => {
                         </Col>
                         <Col>
                             <Card className="h-100 card-border shadow-lg">
-                                <Card.Img variant="top" className="overflow-hidden" src="https://i.ibb.co/7YnzQVq/feature-4.jpg" id='cardimg' />
+                                <div>
+                                    <Card.Img variant="top" className="overflow-hidden" src="https://i.ibb.co/7YnzQVq/feature-4.jpg" id='cardimg' />
+                                </div>
                                 <Card.Body className="text-center">
                                     <Card.Title className="feuture-title">100% of Our Travelers are Happy</Card.Title>
                                 </Card.Body>

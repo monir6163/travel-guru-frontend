@@ -46,7 +46,7 @@ const AddPackage = () => {
                             <Form.Label>Package Title</Form.Label>
                             <Form.Control
                                 className="text-secondary fw-semi-bold"
-
+                                placeholder="Atlantis the Palm Dubai"
                                 {...register("title", { required: true })}
                             />
                         </Form.Group>
@@ -56,6 +56,7 @@ const AddPackage = () => {
                             <Form.Label>Location</Form.Label>
                             <Form.Control
                                 type="text"
+                                placeholder="bangkok"
                                 className="text-secondary fw-semi-bold"
 
                                 {...register("location", { required: true })}
@@ -66,6 +67,7 @@ const AddPackage = () => {
                         <Form.Group as={Col} controlId="formGridEmail">
                             <Form.Label>Duration</Form.Label>
                             <Form.Control
+                                placeholder="5"
                                 type="text"
                                 className="text-secondary fw-semi-bold"
 
@@ -77,6 +79,7 @@ const AddPackage = () => {
                         <Form.Group as={Col} controlId="formGridEmail">
                             <Form.Label>Price</Form.Label>
                             <Form.Control
+                                placeholder="500"
                                 type="text"
                                 className="text-secondary fw-semi-bold"
 
@@ -88,6 +91,7 @@ const AddPackage = () => {
                         <Form.Group as={Col} controlId="formGridEmail">
                             <Form.Label>Photo Url</Form.Label>
                             <Form.Control
+                                placeholder="https://i.ibb.co/dGDkr4v/1.jpg"
                                 type="text"
                                 className="text-secondary fw-semi-bold"
 
@@ -99,6 +103,7 @@ const AddPackage = () => {
                         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                             <Form.Label>Decription</Form.Label>
                             <Form.Control as="textarea" rows={3}
+                                placeholder="Hotel Suites & Apartments on Sheikh Zayed Road in Barsha Heights right next to Dubai Internet City Metro Station. Mirroring"
                                 {...register("description", { required: true })}
                             />
                         </Form.Group>
