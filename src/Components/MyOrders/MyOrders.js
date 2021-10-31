@@ -42,7 +42,7 @@ const MyOrders = () => {
     const map = <FontAwesomeIcon icon={faMapMarkerAlt} />
     const iconuser = <FontAwesomeIcon icon={faUser} />
     return (
-        <Container className="mb-5 mt-5" style={{ minHeight: '100vh' }}>
+        <Container className="mb-5 mt-5" data-aos="fade-up" style={{ minHeight: '100vh' }}>
             <div className="col-12 col-md-8 mx-auto">
                 <h3 className="text-light-green text-center mt-5 mb-3 text-decoration-underline">My Orders List</h3>
             </div>

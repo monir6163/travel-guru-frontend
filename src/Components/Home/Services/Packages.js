@@ -10,7 +10,7 @@ const Packages = () => {
     }, []);
     const [packages] = UsePackage();
     return (
-        <section className="package-container mt-5 mb-5">
+        <section className="package-container mt-5 mb-5" data-aos="fade-up">
             <Container>
                 <div className="sec-title text-center">
                     <p className="text-uppercase abril-font">MODERN & BEAUTIFUL</p>

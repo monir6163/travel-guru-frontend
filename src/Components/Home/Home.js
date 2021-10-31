@@ -27,7 +27,7 @@ const Home = () => {
     return (
         <>
             <Banner />
-            <section className="feture-container mt-5 mb-5">
+            <section className="feture-container mt-5 mb-5" data-aos="fade-up">
                 <div className="container">
                     <div className="sec-title text-center">
                         <p className="text-uppercase abril-font">TRAVEL SPECIALS</p>
@@ -77,7 +77,7 @@ const Home = () => {
                     </Row>
                 </div>
             </section>
-            <section className="about-container mb-5">
+            <section className="about-container mb-5" data-aos="fade-up">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-8 col-12">
@@ -100,7 +100,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-            <section className="booking-container mb-5">
+            <section className="booking-container mb-5" data-aos="fade-up">
                 <Container className="text-center">
                     <div className="sec-title text-center">
                         <p className="text-uppercase abril-font">TRAVEL SPECIALS</p>
@@ -176,7 +176,7 @@ const Home = () => {
                     </Form>
                 </Container>
             </section>
-            <section className="package-container mb-5">
+            <section className="package-container mb-5" data-aos="fade-up">
                 <Container>
                     <div className="sec-title text-center">
                         <p className="text-uppercase abril-font">MODERN & BEAUTIFUL</p>
@@ -201,7 +201,7 @@ const Home = () => {
                     </Link>
                 </div>
             </section>
-            <section className="contact-container py-5">
+            <section className="contact-container py-5" data-aos="fade-up">
                 <Container>
                     <Row>
                         <div className="col-12 col-md-8 mx-auto">

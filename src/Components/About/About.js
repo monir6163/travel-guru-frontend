@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap';
 
 const About = () => {
     return (
-        <section className="about-container mb-5 mt-5">
+        <section className="about-container mb-5 mt-5" data-aos="fade-up">
             <div className="container">
                 <div className="sec-title text-center">
                     <p className="text-uppercase abril-font">About TravelGruru</p>

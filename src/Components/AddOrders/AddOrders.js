@@ -24,8 +24,6 @@ const AddOrders = () => {
     const { register, handleSubmit, reset } = useForm();
     const history = useHistory();
     const onSubmit = (data) => {
-        // orders.status = 'pending';
-        // orders.email = data.email;
         data.status = 'pending';
         data.email = user?.email;
         data.order = orders;

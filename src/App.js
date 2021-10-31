@@ -1,5 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import About from './Components/About/About';
 import Home from './Components/Home/Home';
@@ -14,7 +16,9 @@ import AddOrders from './Components/AddOrders/AddOrders';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import MyOrders from './Components/MyOrders/MyOrders';
 import Manageallorder from './Components/ManageAllOrder/Manageallorder';
-
+AOS.init({
+  debounceDelay: 50
+});
 function App() {
   return (
     <div className="App">
