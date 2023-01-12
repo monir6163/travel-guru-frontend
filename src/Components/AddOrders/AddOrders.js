@@ -1,66 +1,64 @@
-import React from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { Col, Form, Row, Button } from 'react-bootstrap';
-import { useForm } from 'react-hook-form';
-import { useHistory, useParams } from 'react-router';
-import Swal from 'sweetalert2';
-import useAuth from '../../Hooks/useAuth';
+import React, { useEffect, useState } from "react";
+import { Button, Col, Form, Row } from "react-bootstrap";
+import { useForm } from "react-hook-form";
+import { useHistory, useParams } from "react-router";
+import Swal from "sweetalert2";
+import useAuth from "../../Hooks/useAuth";
 
 const AddOrders = () => {
     useEffect(() => {
-        document.title = 'AddOrders : Your Trusted Travel Partner'
+        document.title = "AddOrders : Your Trusted Travel Partner";
     }, []);
     const { user } = useAuth();
     const { bookid } = useParams();
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch(`https://fast-anchorage-60876.herokuapp.com/orders/${bookid}`)
-            .then(res => res.json())
-            .then(data => {
-                setOrders(data)
-            })
-    }, [bookid])
+        fetch(
+            `https://travel-guru-backend-production.up.railway.app/orders/${bookid}`
+        )
+            .then((res) => res.json())
+            .then((data) => {
+                setOrders(data);
+            });
+    }, [bookid]);
     const { register, handleSubmit, reset } = useForm();
     const history = useHistory();
     const onSubmit = (data) => {
-        data.status = 'pending';
+        data.status = "pending";
         data.email = user?.email;
         data.order = orders;
-        fetch('https://fast-anchorage-60876.herokuapp.com/placeorders', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-
-            },
-            body: JSON.stringify(data)
-        })
-            .then(res => {
+        fetch(
+            "https://travel-guru-backend-production.up.railway.app/placeorders",
+            {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json",
+                },
+                body: JSON.stringify(data),
+            }
+        )
+            .then((res) => {
                 if (res) {
-                    Swal.fire("WoW!",
-                        "Package Book SuccessFull!",
-                        "success"
-                    )
+                    Swal.fire("WoW!", "Package Book SuccessFull!", "success");
                     reset();
                 }
-                history.push('/myorders')
+                history.push("/myorders");
             })
             .catch((error) => {
-                Swal.fire(
-                    "Something went wrong!",
-                    `${error.message}`,
-                    "error"
-                )
-            })
+                Swal.fire("Something went wrong!", `${error.message}`, "error");
+            });
         console.log(data);
-    }
+    };
     return (
         <section>
             <div className="container mt-5 mb-5">
                 <div className="row">
                     <div className="col-md-8 col-12">
                         <h2 className="text-center">Order Place Form</h2>
-                        <form className="shadow-lg px-2 px-md-5 py-3 mt-5 text-cyan" onSubmit={handleSubmit(onSubmit)}>
+                        <form
+                            className="shadow-lg px-2 px-md-5 py-3 mt-5 text-cyan"
+                            onSubmit={handleSubmit(onSubmit)}
+                        >
                             <Row className="mb-3">
                                 <Form.Group as={Col} controlId="formGridName">
                                     <Form.Label>User Name</Form.Label>
@@ -68,8 +66,9 @@ const AddOrders = () => {
                                         readOnly
                                         defaultValue={user?.displayName}
                                         className="text-secondary fw-semi-bold"
-
-                                        {...register("name", { required: true })}
+                                        {...register("name", {
+                                            required: true,
+                                        })}
                                     />
                                 </Form.Group>
                                 <Form.Group as={Col} controlId="formGridEmail">
@@ -78,8 +77,9 @@ const AddOrders = () => {
                                         readOnly
                                         defaultValue={user?.email}
                                         className="text-secondary fw-semi-bold"
-
-                                        {...register("email", { required: true })}
+                                        {...register("email", {
+                                            required: true,
+                                        })}
                                     />
                                 </Form.Group>
                             </Row>
@@ -89,8 +89,9 @@ const AddOrders = () => {
                                     <Form.Control
                                         placeholder="Dhaka"
                                         className="text-secondary fw-semi-bold"
-
-                                        {...register("address", { required: true })}
+                                        {...register("address", {
+                                            required: true,
+                                        })}
                                     />
                                 </Form.Group>
                                 <Form.Group as={Col} controlId="formGridEmail">
@@ -99,8 +100,9 @@ const AddOrders = () => {
                                         type="number"
                                         placeholder="+880 1747706163"
                                         className="text-secondary fw-semi-bold"
-
-                                        {...register("phone", { required: true })}
+                                        {...register("phone", {
+                                            required: true,
+                                        })}
                                     />
                                 </Form.Group>
                             </Row>
@@ -117,13 +119,22 @@ const AddOrders = () => {
                     <div className="col-md-4 col-12">
                         <h2 className="text-center mt-3">Order Details</h2>
                         <div className="shadow-lg px-2 px-md-5 py-3 mt-5">
-                            <h5><span className="fw-bolder">Title:</span> {orders.title}</h5>
+                            <h5>
+                                <span className="fw-bolder">Title:</span>{" "}
+                                {orders.title}
+                            </h5>
                         </div>
                         <div className="shadow-lg px-2 px-md-5 py-3 mt-3">
-                            <h5><span className="fw-bolder">Location:</span> {orders.location}</h5>
+                            <h5>
+                                <span className="fw-bolder">Location:</span>{" "}
+                                {orders.location}
+                            </h5>
                         </div>
                         <div className="shadow-lg px-2 px-md-5 py-3 mt-3">
-                            <h5><span className="fw-bolder">Price:</span> ${orders.price}</h5>
+                            <h5>
+                                <span className="fw-bolder">Price:</span> $
+                                {orders.price}
+                            </h5>
                         </div>
                     </div>
                 </div>

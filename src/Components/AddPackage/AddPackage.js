@@ -1,46 +1,43 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { Col, Form, Row, Button } from 'react-bootstrap';
-import { useForm } from 'react-hook-form';
-import Swal from 'sweetalert2';
-import './AddPackage.css';
+import React, { useEffect } from "react";
+import { Button, Col, Form, Row } from "react-bootstrap";
+import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
+import "./AddPackage.css";
 
 const AddPackage = () => {
     useEffect(() => {
-        document.title = 'AddPackages : Your Trusted Travel Partner'
+        document.title = "AddPackages : Your Trusted Travel Partner";
     }, []);
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = (data) => {
-        fetch('https://fast-anchorage-60876.herokuapp.com/allPackages', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-
-            },
-            body: JSON.stringify(data)
-        })
-            .then(res => {
+        fetch(
+            "https://travel-guru-backend-production.up.railway.app/allPackages",
+            {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json",
+                },
+                body: JSON.stringify(data),
+            }
+        )
+            .then((res) => {
                 if (res) {
-                    Swal.fire("WoW!",
-                        "Package Added SuccessFull!",
-                        "success"
-                    )
+                    Swal.fire("WoW!", "Package Added SuccessFull!", "success");
                     reset();
                 }
             })
             .catch((error) => {
-                Swal.fire(
-                    "Something went wrong!",
-                    `${error.message}`,
-                    "error"
-                )
-            })
+                Swal.fire("Something went wrong!", `${error.message}`, "error");
+            });
     };
     return (
         <section>
             <div className="container mt-5 mb-5">
                 <h2 className="text-center">Add Package</h2>
-                <form className="shadow-lg px-2 px-md-5 py-3 mt-5 text-cyan" onSubmit={handleSubmit(onSubmit)}>
+                <form
+                    className="shadow-lg px-2 px-md-5 py-3 mt-5 text-cyan"
+                    onSubmit={handleSubmit(onSubmit)}
+                >
                     <Row className="mb-3">
                         <Form.Group as={Col} controlId="formGridName">
                             <Form.Label>Package Title</Form.Label>
@@ -58,7 +55,6 @@ const AddPackage = () => {
                                 type="text"
                                 placeholder="bangkok"
                                 className="text-secondary fw-semi-bold"
-
                                 {...register("location", { required: true })}
                             />
                         </Form.Group>
@@ -70,7 +66,6 @@ const AddPackage = () => {
                                 placeholder="5"
                                 type="text"
                                 className="text-secondary fw-semi-bold"
-
                                 {...register("duration", { required: true })}
                             />
                         </Form.Group>
@@ -82,7 +77,6 @@ const AddPackage = () => {
                                 placeholder="500"
                                 type="text"
                                 className="text-secondary fw-semi-bold"
-
                                 {...register("price", { required: true })}
                             />
                         </Form.Group>
@@ -94,15 +88,19 @@ const AddPackage = () => {
                                 placeholder="https://i.ibb.co/dGDkr4v/1.jpg"
                                 type="text"
                                 className="text-secondary fw-semi-bold"
-
                                 {...register("img", { required: true })}
                             />
                         </Form.Group>
                     </Row>
                     <Row>
-                        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                        <Form.Group
+                            className="mb-3"
+                            controlId="exampleForm.ControlTextarea1"
+                        >
                             <Form.Label>Decription</Form.Label>
-                            <Form.Control as="textarea" rows={3}
+                            <Form.Control
+                                as="textarea"
+                                rows={3}
                                 placeholder="Hotel Suites & Apartments on Sheikh Zayed Road in Barsha Heights right next to Dubai Internet City Metro Station. Mirroring"
                                 {...register("description", { required: true })}
                             />
